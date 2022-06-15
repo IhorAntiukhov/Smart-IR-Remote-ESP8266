@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".LightRemote">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAcRemote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_toStartOf="@+id/buttonIncreaseTemperature"
+            android:layout_toLeftOf="@+id/buttonIncreaseTemperature"
+            android:layout_toEndOf="@+id/buttonDecreaseTemperature"
+            android:layout_toRightOf="@+id/buttonDecreaseTemperature">
+
+            <TextView
+                android:id="@+id/labelTemperature"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:autoSizeMaxTextSize="100sp"
+                android:autoSizeMinTextSize="1sp"
+                android:autoSizeStepGranularity="0.5sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="25°C"
+                android:textColor="@color/primary_color"
+                android:textStyle="bold"
+                app:layout_constraintDimensionRatio="20:15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="HardcodedText,MissingConstraints"
+                tools:targetApi="o" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/buttonDecreaseTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/ic_decrease_temperature"
+            tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+        <ImageButton
+            android:id="@+id/buttonIncreaseTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/ic_increase_temperature"
+            tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutFirstAcSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-15dp"
+                android:layout_marginRight="-15dp"
+                android:gravity="center_horizontal"
+                android:text="Обдув"
+                android:textColor="@color/primary_color"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/buttonMode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonMode"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/buttonMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_fan_mode"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelFanSpeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15dp"
+                android:layout_marginLeft="-15dp"
+                android:layout_marginEnd="-15dp"
+                android:gravity="center_horizontal"
+                android:text="Слабый"
+                android:textColor="@color/primary_color"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/buttonFanSpeed"
+                app:layout_constraintStart_toStartOf="@+id/buttonFanSpeed"
+                app:layout_constraintTop_toBottomOf="@+id/buttonFanSpeed"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/buttonFanSpeed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_fan"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelTurboMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15dp"
+                android:layout_marginLeft="-15dp"
+                android:layout_marginEnd="-15dp"
+                android:layout_marginRight="-15dp"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="Турбо: выкл"
+                android:textColor="@color/primary_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/buttonTurboMode"
+                app:layout_constraintStart_toStartOf="@+id/buttonTurboMode"
+                app:layout_constraintTop_toBottomOf="@+id/buttonTurboMode"
+                tools:ignore="HardcodedText"
+                tools:targetApi="o" />
+
+            <ImageButton
+                android:id="@+id/buttonTurboMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_turbo_mode"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutSecondAcSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelSwingV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-15dp"
+                android:layout_marginRight="-15dp"
+                android:gravity="center_horizontal"
+                android:text="SwingV: выкл"
+                android:textColor="@color/primary_color"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/buttonSwingV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSwingV"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/buttonSwingV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_swing_vertical"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelSwingH"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15dp"
+                android:layout_marginLeft="-15dp"
+                android:layout_marginEnd="-15dp"
+                android:gravity="center_horizontal"
+                android:text="SwingH: выкл"
+                android:textColor="@color/primary_color"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/buttonSwingH"
+                app:layout_constraintStart_toStartOf="@+id/buttonSwingH"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSwingH"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/buttonSwingH"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_swing_horizontal"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelSleepMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15dp"
+                android:layout_marginLeft="-15dp"
+                android:layout_marginEnd="-15dp"
+                android:layout_marginRight="-15dp"
+                android:gravity="center_horizontal"
+                android:text="Режим сна: выкл"
+                android:textColor="@color/primary_color"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/buttonSleepMode"
+                app:layout_constraintStart_toStartOf="@+id/buttonSleepMode"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSleepMode"
+                tools:targetApi="o"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/buttonSleepMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_night_mode"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonStartAc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:maxLines="1"
+        android:text="Запустить кондиционер"
+        android:textStyle="bold"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/buttonStopAc"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/button_background_style"
+        android:maxLines="1"
+        android:text="Остановить кондиционер"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="#FFFFFF"
+        app:backgroundTintMode="multiply"
+        tools:ignore="HardcodedText"
+        tools:targetApi="o" />
+
+</LinearLayout>

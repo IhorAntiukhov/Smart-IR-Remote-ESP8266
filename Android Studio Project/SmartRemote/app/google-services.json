@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "610359649082",
+    "firebase_url": "https://smartwifiremote-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "smartwifiremote",
+    "storage_bucket": "smartwifiremote.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610359649082:android:48f27fb2bc54e6f2c0e603",
+        "android_client_info": {
+          "package_name": "com.arduinoworld.smartremote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610359649082-oh37q4fd5bq2isaup27taeqn9emv4mto.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDchIh_venTF3fAy9tRskqjSZLLqRN1les"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610359649082-oh37q4fd5bq2isaup27taeqn9emv4mto.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

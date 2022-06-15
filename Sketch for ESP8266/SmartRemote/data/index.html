@@ -1,0 +1,65 @@
+<HTML>
+  <HEAD>
+      <TITLE>Умный Пульт</TITLE>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="indexStyle.css">
+  </HEAD>
+  <BODY>
+    <CENTER>
+        <form>
+            <h1>Умный Пульт</h1>
+            
+            <p><input id="ssid" name="ssid" value="%SSID_NAME%" required type="text" spellcheck="false" placeholder="Название WiFi сети"></p>
+
+            <p><input id="ssid_pass" name="ssid_pass" value="%SSID_PASS%" required type="password" spellcheck="false" minlength="8" placeholder="Пароль WiFi сети">
+            <button type="button" class="toggle_button" id="toggle_ssid_pass">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="16.000000pt" height="16.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#97E300" stroke="none">
+                        <path d="M2400 4259 c-859 -51 -1655 -536 -2184 -1332 -52 -78 -122 -193 -155 -254 l-61 -113 61 -112 c433 -797 1156 -1364 1959 -1536 336 -73 744 -73 1080 0 715 153 1357 610 1804 1281 52 78 122 193 155 255 l61 112 -61 113 c-311 571 -788 1042 -1327 1311 -423 211 -867 303 -1332 275z m365 -655 c323 -62 599 -272 747 -569 77 -155 110 -296 110 -475 0 -282 -97 -529 -287 -729 -209 -220 -471 -333 -775 -333 -515 0 -938 347 -1045 857 -22 106 -22 304 0 410 44 208 131 377 270 524 88 93 163 151 268 206 230 122 458 157 712 109z"/><path d="M2421 3185 c-178 -39 -348 -172 -429 -336 -95 -193 -95 -385 0 -578 82 -166 251 -297 434 -336 451 -96 855 308 759 759 -72 342 -420 565 -764 491z"/>
+                    </g>
+                </svg>
+            </button></p>
+
+            <p><input id="user_email" name="user_email" value="%USER_EMAIL%" required type="email" spellcheck="false"  placeholder="Почта пользователя"></p>
+
+            <p><input id="user_pass" name="user_pass" value="%USER_PASS%" required type="password" spellcheck="false" minlength="6" placeholder="Пароль пользователя">
+            <button type="button" class="toggle_button" id="toggle_user_pass">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="16.000000pt" height="16.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#97E300" stroke="none">
+                        <path d="M2400 4259 c-859 -51 -1655 -536 -2184 -1332 -52 -78 -122 -193 -155 -254 l-61 -113 61 -112 c433 -797 1156 -1364 1959 -1536 336 -73 744 -73 1080 0 715 153 1357 610 1804 1281 52 78 122 193 155 255 l61 112 -61 113 c-311 571 -788 1042 -1327 1311 -423 211 -867 303 -1332 275z m365 -655 c323 -62 599 -272 747 -569 77 -155 110 -296 110 -475 0 -282 -97 -529 -287 -729 -209 -220 -471 -333 -775 -333 -515 0 -938 347 -1045 857 -22 106 -22 304 0 410 44 208 131 377 270 524 88 93 163 151 268 206 230 122 458 157 712 109z"/><path d="M2421 3185 c-178 -39 -348 -172 -429 -336 -95 -193 -95 -385 0 -578 82 -166 251 -297 434 -336 451 -96 855 308 759 759 -72 342 -420 565 -764 491z"/>
+                    </g>
+                </svg>
+            </button></p>
+
+            <p><a href="/light_remote" type="button" class="button_light_remote" id="button_light_remote">+ Пульт Освещения</a></p>
+            <p><a href="/tv_remote" type="button" class="button_tv_remote" id="button_tv_remote">+ Пульт Телевизора</a></p>
+            <p><a href="/ac_remote" type="button" class="button_ac_remote" id="button_ac_remote">+ Пульт Кондиционера</a></p>
+
+            <p><button class="button" id="button_save_settings">Сохранить Параметры</button></p>
+            
+            <script>
+                const toggleUserPass = document.querySelector('#toggle_user_pass');
+                const toggleSsidPass = document.querySelector('#toggle_ssid_pass');
+                
+                const ssidName = document.querySelector('#ssid');
+                const ssidPass = document.querySelector('#ssid_pass');
+                const userEmail = document.querySelector('#user_email');
+                const userPass = document.querySelector('#user_pass');
+                
+                toggleSsidPass.addEventListener('click', function (e) {
+                    const textType = ssidPass.getAttribute('type') === 'password' ? 'text' : 'password';
+                    ssidPass.setAttribute('type', textType);
+                });
+                
+                toggleUserPass.addEventListener('click', function (e) {
+                    const textType = userPass.getAttribute('type') === 'password' ? 'text' : 'password';
+                    userPass.setAttribute('type', textType);
+                });
+            </script>
+        </form>
+    </CENTER> 
+  </BODY>
+</HTML>

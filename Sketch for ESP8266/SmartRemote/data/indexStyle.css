@@ -1,0 +1,206 @@
+input[type="text"] {
+    border-color: #97E300;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: -10px;
+    color: #B9E36D;
+    transition: 0.5s;
+    opacity: 1;
+    padding-left: 6px;
+    padding-right: 6px;
+ }
+ input[type="password"] {
+     border-color: #97E300;
+     border-width: 3px;
+     border-style: solid;
+     border-radius: 10px;
+     font-size: 25px;
+     font-family: monospace;
+     font-weight: bold;
+     margin-top: -10px;
+     color: #B9E36D;
+     transition: 0.5s;
+     opacity: 1;
+     padding-left: 6px;
+     padding-right: 6px;
+ }
+ input[type="email"] {
+     border-color: #97E300;
+     border-width: 3px;
+     border-style: solid;
+     border-radius: 10px;
+     font-size: 25px;
+     font-family: monospace;
+     font-weight: bold;
+     margin-top: -10px;
+     color: #B9E36D;
+     transition: 0.5s;
+     opacity: 1;
+     padding-left: 6px;
+     padding-right: 6px;
+ }
+ input[type="text"]::-webkit-input-placeholder {
+     color: #97E300   
+ }
+ input[type="text"]:focus, input:focus {
+     border-color: #B9E36D;
+     outline: none;
+ }
+ input[type="email"]::-webkit-input-placeholder {
+     color: #97E300    
+ }
+ input[type="email"]:focus, input:focus {
+     border-color: #B9E36D;
+     outline: none;
+ }
+ input[type="password"]::-webkit-input-placeholder {
+     color: #97E300; 
+ }
+ input[type="password"]::-webkit-input-placeholder {
+     border-color: #B9E36D;
+     outline: none;  
+ }
+ input:-webkit-autofill { 
+     -webkit-box-shadow: 0 0 0 30px white inset !important;
+     -webkit-text-fill-color: #B9E36D;
+ }
+ h1 {
+     font-family: sans-serif;
+     font-size: 46px;
+     margin-top: 16px;
+     margin-bottom: -4px;
+     color: #97E300;
+     user-select: none;
+     display: inline-block;
+ }
+ .button {
+     background-color: transparent;
+     border-color: #97E300;
+     border-style: solid;
+     border-width: 3px;
+     border-radius: 10px;
+     margin-top:-6px;
+     font-size: 28px;
+     font-family: monospace;
+     opacity: 1;
+     transition: 0.5s;
+     font-weight: bold;
+     color: #97E300;
+ }
+ .button:hover {
+     opacity: 1;
+     transition: 0.5s;
+     border-color: #B9E36D;
+     color: #B9E36D;
+ }
+ .button:focus {
+     transition: 0.15s;
+     border-color: #97E300;
+     color: #97E300;
+ }
+ .toggle_button {
+     background-color: transparent;
+     border: none;
+     cursor: pointer;
+     padding: 0.5rem;
+     margin-top: -14px;
+     margin-left: -43px;
+ }
+ .button_light_remote {
+     background-color: transparent;
+     border-color: #97E300;
+     border-style: solid;
+     border-width: 3px;
+     border-radius: 10px;
+     font-size: 31px;
+     font-family: monospace;
+     opacity: 1;
+     transition: 0.5s;
+     font-weight: bold;
+     color: #97E300;
+     text-decoration: none;
+     padding-top: 1px;
+     padding-bottom: 1px;
+     padding-left: 6.5px;
+     padding-right: 6.5px;
+     margin-top: -10px;
+     margin-bottom: -6px;
+     display: inline-block;
+ }
+ .button_light_remote:hover {
+     opacity: 1;
+     transition: 0.5s;
+     border-color: #B9E36D;
+     color: #B9E36D;
+ }
+ .button_light_remote:focus {
+     transition: 0.15s;
+     border-color: #97E300;
+     color: #97E300;
+ }
+ .button_tv_remote {
+     background-color: transparent;
+     border-color: #97E300;
+     border-style: solid;
+     border-width: 3px;
+     border-radius: 10px;
+     margin-top:-4px;
+     font-size: 29.5px;
+     font-family: monospace;
+     opacity: 1;
+     transition: 0.5s;
+     font-weight: bold;
+     color: #97E300;
+     text-decoration: none;
+     padding-top: 1px;
+     padding-bottom: 1px;
+     padding-left: 5px;
+     padding-right: 5px;
+     margin-bottom: -6px;
+     display: inline-block;
+ }
+ .button_tv_remote:hover {
+     opacity: 1;
+     transition: 0.5s;
+     border-color: #B9E36D;
+     color: #B9E36D;
+ }
+ .button_tv_remote:focus {
+     transition: 0.15s;
+     border-color: #97E300;
+     color: #97E300;
+ }
+ .button_ac_remote {
+     background-color: transparent;
+     border-color: #97E300;
+     border-style: solid;
+     border-width: 3px;
+     border-radius: 10px;
+     margin-top:-9px;
+     font-size: 26.5px;
+     font-family: monospace;
+     opacity: 1;
+     transition: 0.5s;
+     font-weight: bold;
+     color: #97E300;
+     text-decoration: none;
+     padding-top: 1px;
+     padding-bottom: 1px;
+     padding-left: 5px;
+     padding-right: 5px;
+ }
+ .button_ac_remote:hover {
+     opacity: 1;
+     transition: 0.5s;
+     border-color: #B9E36D;
+     color: #B9E36D;
+ }
+ .button_ac_remote:focus {
+     transition: 0.15s;
+     border-color: #97E300;
+     color: #97E300;
+ }

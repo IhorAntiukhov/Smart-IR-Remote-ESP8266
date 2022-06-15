@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".LightRemote">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarTvRemote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <LinearLayout
+        android:id="@+id/layoutTvRemote"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/remote_layout_background_style"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp">
+
+            <ImageButton
+                android:id="@+id/buttonTvOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="false"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_tv_on_off"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp">
+
+            <ImageButton
+                android:id="@+id/buttonTvDtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="false"
+                android:adjustViewBounds="true"
+                android:background="@drawable/tv_remote_button_background_style"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_tv_dtv"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp">
+
+            <LinearLayout
+                android:id="@+id/layoutVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tv_remote_background_style"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/buttonIncreaseVolume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#00FFFFFF"
+                    app:srcCompat="@drawable/ic_increase_volume"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    app:srcCompat="@drawable/ic_volume"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/buttonDecreaseVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:background="#00FFFFFF"
+                    app:srcCompat="@drawable/ic_decrease_volume"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutChannel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/tv_remote_background_style"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/buttonNextChannel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="#00FFFFFF"
+                    app:srcCompat="@drawable/ic_next_channel"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    app:srcCompat="@drawable/ic_channel"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/buttonPreviousChannel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:background="#00FFFFFF"
+                    app:srcCompat="@drawable/ic_previous_channel"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_toStartOf="@+id/layoutChannel"
+                android:layout_toLeftOf="@+id/layoutChannel"
+                android:layout_toEndOf="@+id/layoutVolume"
+                android:layout_toRightOf="@+id/layoutVolume"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/buttonMute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tv_remote_button_background_style"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_mute"
+                    tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/buttonSource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tv_remote_button_background_style"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_source"
+                    tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="40dp">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="40:32"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="35dp">
+
+                <ImageButton
+                    android:id="@+id/buttonScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/buttonDown"
+                    android:layout_below="@+id/buttonUp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toStartOf="@+id/buttonRight"
+                    android:layout_toLeftOf="@+id/buttonRight"
+                    android:layout_toEndOf="@+id/buttonLeft"
+                    android:layout_toRightOf="@+id/buttonLeft"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tv_remote_button_background_style"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_screen"
+                    tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/buttonUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginRight="50dp"
+                    android:adjustViewBounds="false"
+                    android:background="@drawable/tv_remote_button_background_style"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_up"
+                    tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/buttonDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginRight="50dp"
+                    android:adjustViewBounds="false"
+                    android:background="@drawable/tv_remote_button_background_style"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_down"
+                    tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/buttonLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"
+                    android:adjustViewBounds="false"
+                    android:background="@drawable/tv_remote_button_background_style"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_left"
+                    tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/buttonRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"
+                    android:adjustViewBounds="false"
+                    android:background="@drawable/tv_remote_button_background_style"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_right"
+                    tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/buttonRGBRemote"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/image_button_background_style"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/color_wheel"
+                tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

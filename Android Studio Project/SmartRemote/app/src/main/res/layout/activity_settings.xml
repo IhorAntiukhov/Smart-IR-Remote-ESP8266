@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@drawable/scrollbar_style"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginRight="13dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="95dp"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toStartOf="@+id/radioGroupVibrationTypes"
+                        android:layout_toLeftOf="@+id/radioGroupVibrationTypes"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.5"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="Обычная вибрация"
+                            android:textColor="@color/primary_color"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="Тактильная отдача"
+                            android:textColor="@color/primary_color"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupVibrationTypes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        tools:ignore="UselessParent">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonNormalVibration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:buttonTint="@color/primary_color" />
+
+                        <RadioButton
+                            android:id="@+id/radioButtonHapticFeedback"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            app:buttonTint="@color/primary_color" />
+                    </RadioGroup>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:background="@color/secondary_color" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutBrightnessSteps"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:hint="Кол-во шагов яркости"
+                android:textColor="@color/primary_color"
+                android:textColorHint="@color/primary_color"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:boxStrokeWidth="4dp"
+                app:boxStrokeWidthFocused="4dp"
+                app:placeholderTextColor="@color/primary_color"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputBrightnessSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:drawablePadding="3dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:text="10"
+                    android:textColor="@color/primary_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutTemperatureColorSteps"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:hint="Кол-во шагов t цвета"
+                android:textColor="@color/primary_color"
+                android:textColorHint="@color/primary_color"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:boxStrokeWidth="4dp"
+                app:boxStrokeWidthFocused="4dp"
+                app:placeholderTextColor="@color/primary_color"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputTemperatureColorSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:drawablePadding="3dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:text="20"
+                    android:textColor="@color/primary_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutMinTemperatureColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:hint="Минимальная t цвета"
+                android:textColor="@color/primary_color"
+                android:textColorHint="@color/primary_color"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:boxStrokeWidth="4dp"
+                app:boxStrokeWidthFocused="4dp"
+                app:placeholderTextColor="@color/primary_color"
+                app:suffixText="K"
+                app:suffixTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:suffixTextColor="@color/secondary_color"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputMinTemperatureColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:drawablePadding="3dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:text="3000"
+                    android:textColor="@color/primary_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutMaxTemperatureColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:hint="Максимальная t цвета"
+                android:textColor="@color/primary_color"
+                android:textColorHint="@color/primary_color"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:boxStrokeWidth="4dp"
+                app:boxStrokeWidthFocused="4dp"
+                app:placeholderTextColor="@color/primary_color"
+                app:suffixText="K"
+                app:suffixTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:suffixTextColor="@color/secondary_color"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputMaxTemperatureColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:drawablePadding="3dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:text="6500"
+                    android:textColor="@color/primary_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutMinAcTemperature"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:hint="Мин t кондиционера"
+                android:textColor="@color/primary_color"
+                android:textColorHint="@color/primary_color"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:boxStrokeWidth="4dp"
+                app:boxStrokeWidthFocused="4dp"
+                app:placeholderTextColor="@color/primary_color"
+                app:suffixText="°C"
+                app:suffixTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:suffixTextColor="@color/secondary_color"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputMinAcTemperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:drawablePadding="3dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:text="16"
+                    android:textColor="@color/primary_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutMaxAcTemperature"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:hint="Макс t кондиционера"
+                android:textColor="@color/primary_color"
+                android:textColorHint="@color/primary_color"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:boxStrokeWidth="4dp"
+                app:boxStrokeWidthFocused="4dp"
+                app:placeholderTextColor="@color/primary_color"
+                app:suffixText="°C"
+                app:suffixTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:suffixTextColor="@color/secondary_color"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputMaxAcTemperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:drawablePadding="3dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:text="30"
+                    android:textColor="@color/primary_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/buttonDefaultSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="10dp"
+                android:autoSizeMaxTextSize="100sp"
+                android:autoSizeMinTextSize="2sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/button_background_style"
+                android:maxLines="1"
+                android:text="Параметры по умолчанию"
+                android:textStyle="bold"
+                app:backgroundTint="#FFFFFF"
+                app:backgroundTintMode="multiply"
+                tools:ignore="HardcodedText"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

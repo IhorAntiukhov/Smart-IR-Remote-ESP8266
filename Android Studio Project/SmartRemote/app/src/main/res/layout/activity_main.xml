@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <ImageButton
+        android:id="@+id/buttonLightRemote"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/image_button_background"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_light"
+        tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/buttonTVRemote"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/image_button_background"
+        android:paddingLeft="40dp"
+        android:paddingTop="30dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_tv"
+        tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/buttonConditionerRemote"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="50dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/image_button_background"
+        android:paddingLeft="50dp"
+        android:paddingTop="10dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="10dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_air_conditioner"
+        tools:ignore="ContentDescription,VectorDrawableCompat" />
+</LinearLayout>

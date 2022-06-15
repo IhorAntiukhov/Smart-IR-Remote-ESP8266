@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginRight="5dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="10:6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/primary_color"
+        app:strokeWidth="5dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/labelRemoteName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="-2dp"
+                android:layout_weight="0.5"
+                android:autoSizeMaxTextSize="150sp"
+                android:autoSizeMinTextSize="1sp"
+                android:autoSizeStepGranularity="0.5sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:text="Комната 1"
+                android:textColor="@color/primary_color"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText"
+                tools:targetApi="o" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_weight="0.5"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelBrightness"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_weight="0.4"
+                    android:autoSizeMaxTextSize="150sp"
+                    android:autoSizeMinTextSize="1sp"
+                    android:autoSizeStepGranularity="0.5sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Выкл"
+                    android:textColor="@color/primary_color"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,NestedWeights"
+                    tools:targetApi="o" />
+
+                <TextView
+                    android:id="@+id/labelColorTemperature"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:autoSizeMaxTextSize="150sp"
+                    android:autoSizeMinTextSize="1sp"
+                    android:autoSizeStepGranularity="0.5sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="6500K"
+                    android:textColor="@color/primary_color"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"
+                    tools:targetApi="o" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

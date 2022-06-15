@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".LightRemote">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarLightRemote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lightRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="200dp"
+            android:paddingEnd="-6dp"
+            android:paddingRight="-6dp"
+            android:visibility="gone"
+            tools:ignore="RtlSymmetry" />
+
+        <LinearLayout
+            android:id="@+id/layoutLightRemote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/remote_layout_background_style"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <ImageButton
+                        android:id="@+id/buttonOnOff"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/image_button_background_style"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_on_off"
+                        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <ImageButton
+                        android:id="@+id/buttonNightMode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/image_button_background_style"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:tint="#FFFFFF"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_night_mode"
+                        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    tools:ignore="MissingConstraints">
+
+                    <ImageButton
+                        android:id="@+id/buttonIncreaseBrightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/image_button_background_style"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_increase_brightness"
+                        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                    <ImageButton
+                        android:id="@+id/buttonDecreaseBrightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/image_button_background_style"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_decrease_brightness"
+                        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                    <ImageButton
+                        android:id="@+id/buttonDecreaseTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/image_button_background_style"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_decrease_color_temperature"
+                        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                    <ImageButton
+                        android:id="@+id/buttonIncreaseTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/image_button_background_style"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_increase_color_temperature"
+                        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                    <ImageButton
+                        android:id="@+id/buttonMemory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/image_button_background_style"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_memory"
+                        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/labelCurrentBrightness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Выкл"
+                    android:textColor="@color/primary_color"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/labelCurrentColorTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="6500K"
+                    android:textColor="@color/primary_color"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:id="@+id/buttonTimer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/image_button_background_style"
+                            android:padding="10dp"
+                            android:scaleType="fitCenter"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.66"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:srcCompat="@drawable/ic_timer"
+                            tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:id="@+id/buttonColdTemperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/image_button_background_style"
+                            android:padding="10dp"
+                            android:scaleType="fitCenter"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.33"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:srcCompat="@drawable/ic_color_temperature_mode"
+                            tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutRemoteName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:hint="Название пульта"
+            android:textColor="@color/primary_color"
+            android:textColorHint="@color/primary_color"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="@color/secondary_color"
+            app:boxStrokeWidth="4dp"
+            app:boxStrokeWidthFocused="4dp"
+            app:placeholderTextColor="@color/primary_color"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputRemoteName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="3dp"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/primary_color"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutRemoteID"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:hint="ID пульта освещения"
+            android:textColor="@color/primary_color"
+            android:textColorHint="@color/primary_color"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="@color/secondary_color"
+            app:boxStrokeWidth="4dp"
+            app:boxStrokeWidthFocused="4dp"
+            app:placeholderTextColor="@color/primary_color"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputRemoteID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/primary_color"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonAddRemote"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="2sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_background_style"
+            android:maxLines="1"
+            android:text="Добавить пульт"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:backgroundTintMode="multiply"
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/buttonChangeRemote"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="2sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_background_style"
+            android:maxLines="1"
+            android:text="Изменить пульт"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="#FFFFFF"
+            app:backgroundTintMode="multiply"
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTimerTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="70dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/labelTimerTime"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="1 мин"
+                android:textColor="@color/primary_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="200sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="0.5sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintDimensionRatio="20:7"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="15dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <SeekBar
+            android:id="@+id/sliderTimerTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:max="179"
+            android:progress="0"
+            android:progressDrawable="@drawable/seek_bar_style"
+            android:splitTrack="false"
+            android:thumb="@drawable/thumb_style"
+            android:visibility="gone"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/buttonStartTimer"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="2sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_background_style"
+            android:maxLines="1"
+            android:text="Запустить таймер"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="#FFFFFF"
+            app:backgroundTintMode="multiply"
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTimeLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/labelTimeLeft"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="00:00:00"
+                android:textColor="@color/primary_color"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="200sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="0.5sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="20:6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/buttonStopTimer"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="2sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/button_background_style"
+            android:maxLines="1"
+            android:text="Остановить таймер"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="#FFFFFF"
+            app:backgroundTintMode="multiply"
+            tools:ignore="HardcodedText"
+            tools:targetApi="o" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddRemote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:backgroundTint="@color/primary_color"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_add_room"
+        app:tint="@color/white"
+        tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,97 @@
+<HTML>
+  <HEAD>
+      <TITLE>Пульт Кондиционера</TITLE>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="AcRemoteStyle.css">
+  </HEAD>
+  <BODY>
+    <CENTER>
+        <div>
+            <a href="/" class="toggle_button" id="button_back">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="24px" viewBox="0 0 14 24" version="1.1">
+                    <g id="surface1">
+                        <path style=" stroke:none;fill-rule:nonzero;fill:#97E300;fill-opacity:1;" d="M 0.28125 13.539062 L 2.226562 11.632812 L 15.71875 24.847656 L 13.773438 26.75 Z M 0.28125 13.539062 "/>
+                        <path style=" stroke:none;fill-rule:nonzero;fill:#97E300;fill-opacity:1;" d="M 2.226562 15.367188 L 0.28125 13.460938 L 13.773438 0.25 L 15.71875 2.152344 Z M 2.226562 15.367188 "/>
+                    </g>
+                </svg>
+            </a>
+            <h1>Пульт Кондиционера</h1>
+        </div>
+                
+        <h2 id="wait_label">Ждём получение команды пульта</h2>
+        <h2 id="protocol_label" style="display: none">%PROTOCOL%</h2>
+        
+        <p><button required class="button" id="button_save_ac_remote" style="font-size: 32px; margin-top: -6px; display: none">Сохранить Пульт</button></p>
+        
+        <h1 id="remote_saved" style="font-size: 34px; margin-top: -10px; display: none">Пульт сохранён!</h1>
+        
+        <script>
+            const waitLabel = document.querySelector('#wait_label');
+            const protocolLabel = document.querySelector('#protocol_label');
+            const buttonSaveAcRemote = document.querySelector('#button_save_ac_remote');
+            const labelRemoteSaved = document.querySelector('#remote_saved');
+            
+            var dotCount = 0;
+            
+            setTimeout(function run() {
+                dotCount = dotCount + 1;
+                if (dotCount <= 3) {
+                    if (dotCount == 1) {
+                        waitLabel.innerHTML = "Ждём получение команды пульта .";
+                    }
+                    if (dotCount == 2) {
+                        waitLabel.innerHTML = "Ждём получение команды пульта ..";
+                    }
+                    if (dotCount == 3) {
+                        waitLabel.innerHTML = "Ждём получение команды пульта ...";
+                    }
+                } else if (dotCount > 3 && dotCount <= 6) {
+                    if (dotCount == 4) {
+                        waitLabel.innerHTML = "Ждём получение команды пульта ..";
+                    }
+                    if (dotCount == 5) {
+                        waitLabel.innerHTML = "Ждём получение команды пульта .";
+                    }
+                    if (dotCount == 6) {
+                        waitLabel.innerHTML = "Ждём получение команды пульта";
+                        dotCount = 0;
+                    }
+                }
+                setTimeout(run, 500);
+            }, 500);
+            
+            setTimeout(function run() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (this.responseText != "") {
+                            dotCount = 7;
+                            waitLabel.style.display = "none";
+                            protocolLabel.style.display = "block";
+                            if (this.responseText != "unknown") {
+                                protocolLabel.innerHTML = "Ик протокол пульта: " + 
+                                this.responseText;
+                                buttonSaveAcRemote.style.display = "block";
+                            } else {
+                                protocolLabel.innerHTML = "Этот ИК протокол не поддерживается!";
+                            }
+                        }
+                    }
+                };
+                xhr.open("GET", "/ir_protocol", true);
+                xhr.send();
+                
+                setTimeout(run, 1000);
+            }, 1000);
+            
+            buttonSaveAcRemote.addEventListener('click', function (e) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "/button_save_ac_remote", true);
+                xhr.send();
+                labelRemoteSaved.style.display = "block";
+            });
+        </script>
+    </CENTER> 
+  </BODY>
+</HTML>
